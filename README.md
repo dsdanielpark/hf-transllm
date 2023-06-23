@@ -36,7 +36,9 @@ pip install transllm
 
 If you wish to use the various features and CLI:
 ```
-pip install git+https://github.com/dsdanielpark/Bard-API.git
+pip install git+https://github.com/dsdanielpark/hf-transllm.git
+cd hf-transllm
+python main.py
 ```
 
 <br>
@@ -53,18 +55,75 @@ Simple Usage
 ```python
 from transllm import LLMtranslator
 
+# Set huggingface repository
 model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_7b'
 # model_path = 'openlm-research/open_llama_13b'
 
+# Get TransLLM Object
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google')
 
-open_llama_kor = LLMtranslator(model_path, target_lang='ko', translator='google')
-
-
+# Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
-translation = open_llama_kor.generate(prompt)
+translation = open_llama3b_kor.generate(prompt)
 print(translation)
 ```
+
+02. DeepL
+```python
+from transllm import LLMtranslator
+
+# Set huggingface repository
+model_path = 'openlm-research/open_llama_3b'
+# model_path = 'openlm-research/open_llama_7b'
+# model_path = 'openlm-research/open_llama_13b'
+
+# Get TransLLM Object
+open_llama3b_kor = LLMtranslator(model_path, target_lang='EN', translator='deepl', deepl_api='xxxxxxx')
+
+# Using Prompt in multi-language
+prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
+translation = open_llama3b_kor.generate(prompt)
+print(translation)
+```
+
+03. Open AI
+```python
+from transllm import LLMtranslator
+
+# Set huggingface repository
+model_path = 'openlm-research/open_llama_3b'
+# model_path = 'openlm-research/open_llama_7b'
+# model_path = 'openlm-research/open_llama_13b'
+
+# Get TransLLM Object
+open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='openai', openai_api='xxxxxxx', openai_model='gpt-3.5-turbo')
+
+# Using Prompt in multi-language
+prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
+translation = open_llama3b_kor.generate(prompt)
+print(translation)
+```
+
+04. Google Bard
+https://github.com/dsdanielpark/Bard-API
+```python
+from transllm import LLMtranslator
+
+# Set huggingface repository
+model_path = 'openlm-research/open_llama_3b'
+# model_path = 'openlm-research/open_llama_7b'
+# model_path = 'openlm-research/open_llama_13b'
+
+# Get TransLLM Object
+open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='bard', bard_api='xxxxxxx')
+
+# Using Prompt in multi-language
+prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
+translation = open_llama3b_kor.generate(prompt)
+print(translation)
+```
+
 
 ## Contributors
 
