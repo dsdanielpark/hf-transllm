@@ -46,7 +46,6 @@ python main.py
 ## Usage 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1zzzlTIh0kt2MdjLzvXRby1rWbHzmog8t?usp=sharing) 
 
-
 Simple Usage
 
 - Google Trnaslator
@@ -69,7 +68,7 @@ print(translation)
 
 <br>
 
-- DeepL
+- DeepL, OpenAI, Bard
 ```python
 from transllm import LLMtranslator
 
@@ -78,8 +77,10 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_7b'
 # model_path = 'openlm-research/open_llama_13b'
 
-# Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='EN', translator='deepl', deepl_api='xxxxxxx')
+# Choose Translate Service API: DeepL, OpenAI, Bard
+open_llama3b_kor = LLMtranslator(model_path, target_lang='EN', translator='deepl', deepl_api='xxxxxxx') 
+# open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='openai', openai_api='xxxxxxx', openai_model='gpt-3.5-turbo')
+# open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='bard', bard_api='xxxxxxx')
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
@@ -87,46 +88,6 @@ translation = open_llama3b_kor.generate(prompt)
 print(translation)
 ```
 
-<br>
-
-- Open AI
-```python
-from transllm import LLMtranslator
-
-# Set huggingface repository
-model_path = 'openlm-research/open_llama_3b'
-# model_path = 'openlm-research/open_llama_7b'
-# model_path = 'openlm-research/open_llama_13b'
-
-# Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='openai', openai_api='xxxxxxx', openai_model='gpt-3.5-turbo')
-
-# Using Prompt in multi-language
-prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
-translation = open_llama3b_kor.generate(prompt)
-print(translation)
-```
-
-<br>
-
-- Google Bard
-https://github.com/dsdanielpark/Bard-API
-```python
-from transllm import LLMtranslator
-
-# Set huggingface repository
-model_path = 'openlm-research/open_llama_3b'
-# model_path = 'openlm-research/open_llama_7b'
-# model_path = 'openlm-research/open_llama_13b'
-
-# Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='bard', bard_api='xxxxxxx')
-
-# Using Prompt in multi-language
-prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
-translation = open_llama3b_kor.generate(prompt)
-print(translation)
-```
 
 
 ## Contributors
