@@ -26,7 +26,7 @@ Since the purpose of the Hugging Face inference module is more focused on checki
 
 <br>
 
-## Install
+## Installation
 ```
 pip install transllm
 ```
