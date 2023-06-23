@@ -12,7 +12,7 @@ Development Status :: 3 - Alpha
 
 > LLMtranslator translates and generates text in multiple languages.
 
-![](assets/hf-transllm.png)
+![](assets/transllm.png)
 
 Introducing hf-transllm: Unlock the Power of Multilingual Exploration
 
