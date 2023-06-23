@@ -2,10 +2,16 @@ import argparse
 from transllm.core import LLMtranslator
 from googletrans import Translator
 
+
 def main():
-    parser = argparse.ArgumentParser(description='LLM Model Chat')
-    parser.add_argument('model_path', type=str, help='Path to the LLM model')
-    parser.add_argument('--dest', type=str, default='ko', help='Destination language for translation (default: ko)')
+    parser = argparse.ArgumentParser(description="LLM Model Chat")
+    parser.add_argument("model_path", type=str, help="Path to the LLM model")
+    parser.add_argument(
+        "--dest",
+        type=str,
+        default="ko",
+        help="Destination language for translation (default: ko)",
+    )
     args = parser.parse_args()
 
     translator = Translator()
@@ -18,7 +24,7 @@ def main():
     while True:
         user_input = input("User: ")
 
-        if user_input.lower() == 'q':
+        if user_input.lower() == "q":
             print("Exiting the chat.")
             break
 

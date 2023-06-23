@@ -1,3 +1,5 @@
+# Copyright 2023 parkminwoo, MIT License
+
 import torch
 import deepl
 import openai
@@ -5,6 +7,7 @@ from transformers import LlamaTokenizer, LlamaForCausalLM
 from googletrans import Translator
 from bardapi import Bard
 import re
+
 
 class LLMtranslator:
     """
@@ -35,23 +38,35 @@ class LLMtranslator:
             Generates text based on the provided prompt and returns it in the target language.
     """
 
-    def __init__(self, model_path, target_lang='ko', translator='google', torch_dtype=torch.float16, device_map='auto', deepl_api=None, bard_api=None, openai_api=None, openai_model='gpt-3.5-turbo'):
+    def __init__(
+        self,
+        model_path,
+        target_lang="ko",
+        translator="google",
+        torch_dtype=torch.float16,
+        device_map="auto",
+        deepl_api=None,
+        bard_api=None,
+        openai_api=None,
+        openai_model="gpt-3.5-turbo",
+    ):
         self.model_path = model_path
         self.target_lang = target_lang
         self.tokenizer = LlamaTokenizer.from_pretrained(model_path)
-        self.model = LlamaForCausalLM.from_pretrained(model_path, torch_dtype=torch_dtype, device_map=device_map)
+        self.model = LlamaForCausalLM.from_pretrained(
+            model_path, torch_dtype=torch_dtype, device_map=device_map
+        )
         self.translator = translator
         self.bard_api = bard_api
         self.openai_api = openai_api
         self.deepl_api = deepl_api
         self.openai_model = openai_model
-        if self.translator == 'google':
+        if self.translator == "google":
             self.translator_obj = Translator()
-        elif self.translator == 'deepl':
+        elif self.translator == "deepl":
             self.translator_obj = deepl.Translator(self.deepl_api)
-        elif self.translator == 'bard':
+        elif self.translator == "bard":
             self.translator_obj = Bard(token=self.bard_api)
-            
 
     def translate(self, text: str, dest_lang: str) -> str:
         """
@@ -64,19 +79,19 @@ class LLMtranslator:
         Returns:
             str: The translated text in the specified language.
         """
-        if self.translator == 'google':
+        if self.translator == "google":
             return self.translator_obj.translate(text, dest=dest_lang)
-        elif self.translator == 'deepl':
+        elif self.translator == "deepl":
             return self.translator_obj.translate_text(text, target_lang=dest_lang)
-        elif self.translator == 'bard':
-            translated = self.translator_obj.get_answer(f'{text}를 {dest_lang}로 번역해.')
+        elif self.translator == "bard":
+            translated = self.translator_obj.get_answer(f"{text}를 {dest_lang}로 번역해.")
             extracted_text = re.findall(r'"([^"]*)"', translated)
             return extracted_text[0]
-        elif self.translator == 'openai':
+        elif self.translator == "openai":
             response = openai.ChatCompletion.create(
-                                                    model=self.openai_model,
-                                                    messages=[{"role": "user", "content": f'{text}를 {dest_lang}으로 번역해'}]
-                                                    )
+                model=self.openai_model,
+                messages=[{"role": "user", "content": f"{text}를 {dest_lang}으로 번역해"}],
+            )
             return response
 
     def translate_to_en(self, text: str) -> str:
@@ -89,7 +104,7 @@ class LLMtranslator:
         Returns:
             str: The translated text in English.
         """
-        return self.translate(text, 'en')
+        return self.translate(text, "en")
 
     def translate_to_targetlang(self, text: str) -> str:
         """
