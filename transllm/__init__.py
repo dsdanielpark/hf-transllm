@@ -2,5 +2,5 @@
 from transllm.core import LLMtranslator
 
 __all__ = ["LLMtranslator"]
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "daniel park <parkminwoo1991@gmail.com>"
