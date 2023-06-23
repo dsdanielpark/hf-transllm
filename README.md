@@ -14,7 +14,7 @@ Development Status :: 3 - Alpha
 
 Through the inference module of Hugging Face, you can conveniently use the results of Hugging Face's open-source large language model. However, there are limitations in retraining or evaluating the model's performance in various languages.
 
-Therefore, this package allows you to explore the results of the Hugging Face inference module in multiple languages using various translation API services.
+Therefore, this package allows you to explore the results of the Hugging Face inference module in multiple languages using various trnaslated_answer API services.
 
 Since the purpose of the Hugging Face inference module is more focused on checking the model weights easily rather than efficiency, this package emphasizes the ability to explore the results in various languages rather than efficiency.
 
@@ -59,8 +59,8 @@ open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='googl
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
-translation = open_llama3b_kor.generate(prompt)
-print(translation)
+trnaslated_answer = open_llama3b_kor.generate(prompt)
+print(trnaslated_answer)
 ```
 
 <br>
@@ -81,8 +81,8 @@ open_llama3b_kor = LLMtranslator(model_path, target_lang='EN', translator='deepl
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
-translation = open_llama3b_kor.generate(prompt)
-print(translation)
+trnaslated_answer = open_llama3b_kor.generate(prompt)
+print(trnaslated_answer)
 ```
 
 <br>
