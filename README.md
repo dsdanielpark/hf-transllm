@@ -66,6 +66,7 @@ print(trnaslated_answer)
 
 DeepL
 - Support Language: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
+
 Open AI, Bard use pre-prompt for translation.
 ```python
 from transllm import LLMtranslator
