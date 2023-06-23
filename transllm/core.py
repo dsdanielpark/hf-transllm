@@ -80,11 +80,11 @@ class LLMtranslator:
             str: The translated text in the specified language.
         """
         if self.translator == "google":
-            return self.translator_obj.translate(text, dest=dest_lang)
+            return self.translator_obj.translate(text, dest=dest_lang).text
         elif self.translator == "deepl":
-            return self.translator_obj.translate_text(text, target_lang=dest_lang)
+            return self.translator_obj.translate_text(text, target_lang=dest_lang).text
         elif self.translator == "bard":
-            translated = self.translator_obj.get_answer(f"{text}를 {dest_lang}로 번역해.")
+            translated = self.translator_obj.get_answer(f"{text}를 {dest_lang}로 번역해.")['content']
             extracted_text = re.findall(r'"([^"]*)"', translated)
             return extracted_text[0]
         elif self.translator == "openai":
