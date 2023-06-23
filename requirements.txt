@@ -1,0 +1,10 @@
+requests
+deep_translator
+colorama
+httpx[http2]
+bardapi
+googletrans
+transformers
+deep_translator
+torch
+deepl
