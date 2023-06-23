@@ -1,9 +1,6 @@
-# hf-llm-translator
-
 Development Status :: 3 - Alpha
 
-
-# Python Package: Trans LLM
+# Python Package: hf-transllm
 
 <p align="left">
 <a><img alt="PyPI package" src="https://img.shields.io/badge/pypi-transllm-black"></a>
