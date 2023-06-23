@@ -14,7 +14,7 @@ Development Status :: 3 - Alpha
 
 ![](assets/transllm.png)
 
-Introducing hf-transllm: Unlock the Power of Multilingual Exploration
+### Introducing hf-transllm: Unlock the Power of Multilingual Exploration
 
 Discover the hf-transllm package, a seamless integration of Hugging Face's inference module and translation APIs. Overcome limitations in retraining and evaluating large language models in different languages. Explore diverse results effortlessly, leveraging translation API services. Emphasizing versatility over efficiency, hf-transllm enables you to delve into the outcomes of Hugging Face's models in various languages.
 
