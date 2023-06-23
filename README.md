@@ -14,11 +14,9 @@ Development Status :: 3 - Alpha
 
 ![](assets/hf-transllm.png)
 
-Through the inference module of Hugging Face, you can conveniently use the results of Hugging Face's open-source large language model. However, there are limitations in retraining or evaluating the model's performance in various languages.
+Introducing hf-transllm: Unlock the Power of Multilingual Exploration
 
-Therefore, this package allows you to explore the results of the Hugging Face inference module in multiple languages using various trnaslated_answer API services.
-
-Since the purpose of the Hugging Face inference module is more focused on checking the model weights easily rather than efficiency, this package emphasizes the ability to explore the results in various languages rather than efficiency.
+Discover the hf-transllm package, a seamless integration of Hugging Face's inference module and translation APIs. Overcome limitations in retraining and evaluating large language models in different languages. Explore diverse results effortlessly, leveraging translation API services. Emphasizing versatility over efficiency, hf-transllm enables you to delve into the outcomes of Hugging Face's models in various languages.
 
 
 <br>
