@@ -45,9 +45,8 @@ python main.py
 ## Usage 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 
-Simple Usage
-
-- Google Trnaslator
+Google Trnaslator
+- support language: https://github.com/ssut/py-googletrans/blob/master/googletrans/constants.py
 ```python
 from transllm import LLMtranslator
 
@@ -67,7 +66,9 @@ print(trnaslated_answer)
 
 <br>
 
-- DeepL, OpenAI, Bard
+DeepL
+- Support Language: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
+Open AI, Bard use pre-prompt for translation.
 ```python
 from transllm import LLMtranslator
 
