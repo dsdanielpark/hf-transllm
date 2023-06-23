@@ -51,7 +51,7 @@ python main.py
 
 Simple Usage
 
-01. Google Trnaslator
+- Google Trnaslator
 ```python
 from transllm import LLMtranslator
 
@@ -69,7 +69,9 @@ translation = open_llama3b_kor.generate(prompt)
 print(translation)
 ```
 
-02. DeepL
+<br>
+
+- DeepL
 ```python
 from transllm import LLMtranslator
 
@@ -87,7 +89,9 @@ translation = open_llama3b_kor.generate(prompt)
 print(translation)
 ```
 
-03. Open AI
+<br>
+
+- Open AI
 ```python
 from transllm import LLMtranslator
 
@@ -105,7 +109,9 @@ translation = open_llama3b_kor.generate(prompt)
 print(translation)
 ```
 
-04. Google Bard
+<br>
+
+- Google Bard
 https://github.com/dsdanielpark/Bard-API
 ```python
 from transllm import LLMtranslator
