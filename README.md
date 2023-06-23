@@ -33,9 +33,11 @@ If you wish to use the various features and CLI:
 ```
 pip install git+https://github.com/dsdanielpark/hf-transllm.git
 cd hf-transllm
-python main.py
+pip install -r requirements.txt
 ```
-
+```bash
+python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translator <google>
+```
 <br>
 
 <br>
