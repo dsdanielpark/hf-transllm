@@ -85,6 +85,7 @@ translation = open_llama3b_kor.generate(prompt)
 print(translation)
 ```
 
+<br>
 
 
 ## Contributors
