@@ -44,7 +44,9 @@ setup(
         "transformers",
         "googletrans",
         "bardapi",
-        "openai"
+        "openai",
+        "sentencepiece",
+        "accelerate"
     ],
     keywords="Python, API, Bard, Google Bard, Large Language Model, Chatbot API, Google API, Chatbot",
     classifiers=[
