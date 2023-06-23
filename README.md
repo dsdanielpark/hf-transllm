@@ -12,6 +12,8 @@ Development Status :: 3 - Alpha
 
 > LLMtranslator translates and generates text in multiple languages.
 
+![](assets/hf-transllm.png)
+
 Through the inference module of Hugging Face, you can conveniently use the results of Hugging Face's open-source large language model. However, there are limitations in retraining or evaluating the model's performance in various languages.
 
 Therefore, this package allows you to explore the results of the Hugging Face inference module in multiple languages using various trnaslated_answer API services.
