@@ -14,10 +14,10 @@ class LLMtranslator(TranslationService):
         translator (str, optional): The translation service to use (default: "google").
         torch_dtype (torch.dtype, optional): The data type for torch (default: torch.float16).
         device_map (str, optional): The device map for torch (default: "auto").
-        deepl_api (str, optional): DeepL API key (if required).
-        bard_api (str, optional): Bard API key (if required).
+        deepl_api_key (str, optional): DeepL API key (if required).
+        bard_api_key (str, optional): Bard API key (if required).
         openai_model (str, optional): OpenAI model name (default: "gpt-3.5-turbo").
-        openai_api (str, optional): OpenAI API key (if required).
+        openai_api_key (str, optional): OpenAI API key (if required).
     """
 
     def __init__(
@@ -27,16 +27,16 @@ class LLMtranslator(TranslationService):
         translator="google",
         torch_dtype=torch.float16,
         device_map="auto",
-        deepl_api=None,
-        bard_api=None,
+        deepl_api_key=None,
+        bard_api_key=None,
+        openai_api_key=None,
         openai_model="gpt-3.5-turbo",
-        openai_api=None
     ):
         super().__init__(
             translator=translator,
-            deepl_api=deepl_api,
-            bard_api=bard_api,
-            openai_api=openai_api,
+            deepl_api_key=deepl_api_key,
+            bard_api_key=bard_api_key,
+            openai_api_key=openai_api_key,
             openai_model=openai_model,
         )
         self.model_path = model_path
