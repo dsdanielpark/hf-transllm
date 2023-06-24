@@ -41,10 +41,10 @@ git clone https://github.com/dsdanielpark/hf-transllm
 cd hf-transllm
 pip install -r requirements.txt
 ```
-There can be issues with various dependencies such as Hugging Face's Transformers, SentencePiece, Torch, and CUDA. Please set up the appropriate environment by searching online.
 ```bash
 python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translator <google>
 ```
+There can be issues with various dependencies such as Hugging Face's Transformers, SentencePiece, Torch, and CUDA. Please set up the appropriate environment by searching online.
 <br>
 
 <br>
