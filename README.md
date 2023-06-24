@@ -10,7 +10,7 @@ Development Status :: 3 - Alpha
 </p>
 
 
-> LLMtranslator translates and generates text in multiple languages.
+> LLMtranslator translates and generates text in multiple languages using LLMs(Large Language Models).
 
 ![](assets/transllm.png)
 
