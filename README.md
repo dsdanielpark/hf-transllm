@@ -54,6 +54,16 @@ There can be issues with various dependencies such as Hugging Face's Transformer
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 ![](assets/hf-transllm-colab.png)
 
+
+Simple Usage
+```python
+from transllm import LLMtranslator
+
+open_llama3b_kor = LLMtranslator('openlm-research/open_llama_3b', target_lang='ko', translator='google') # Korean
+
+trnaslated_answer = open_llama3b_kor.generate("나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘")
+print(trnaslated_answer)
+```
 <br>
 
 Google Trnaslator
