@@ -58,7 +58,7 @@ In other words, if you are familiar with the inference process or code from Hugg
 ![](assets/hf-transllm-colab.png)
 
 Google Trnaslator
-- Support Languages: https://github.com/ssut/py-googletrans/blob/master/googletrans/constants.py
+- Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
 ```python
 from transllm import LLMtranslator
 
