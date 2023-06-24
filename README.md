@@ -55,6 +55,8 @@ Applying LLMs to the majority of Hugging Face repositories is generally feasible
 In other words, if you are familiar with the inference process or code from Hugging Face repositories, you can customize the translation object by adding a translation module before and after the known inference process or code.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 
+![](assets/hf-transllm-colab.png)
+
 Google Trnaslator
 - Support Languages: https://github.com/ssut/py-googletrans/blob/master/googletrans/constants.py
 ```python
