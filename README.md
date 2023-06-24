@@ -50,12 +50,13 @@ python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translato
 <br>
 
 ## Usage 
+![](assets/hf-transllm-colab.png)
 Applying LLMs to the majority of Hugging Face repositories is generally feasible. However, it can be challenging to apply them to objects that require unique tokenizers or inference processes. In such cases, it is recommended to customize the usage by incorporating a translation module for prompts.
 
 In other words, if you are familiar with the inference process or code from Hugging Face repositories, you can customize the translation object by adding a translation module before and after the known inference process or code.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 
-![](assets/hf-transllm-colab.png)
+<br><br>
 
 Google Trnaslator
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
