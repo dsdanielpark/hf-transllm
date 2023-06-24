@@ -68,7 +68,7 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_13b'
 
 # Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google')
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Language == Korean
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
@@ -91,7 +91,7 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_13b'
 
 # Choose Translate Service API: DeepL, OpenAI, Bard
-open_llama3b_kor = LLMtranslator(model_path, target_lang='EN', translator='deepl', deepl_api='xxxxxxx') 
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ES', translator='deepl', deepl_api='xxxxxxx') # Language == Spanish
 # open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='openai', openai_api='xxxxxxx', openai_model='gpt-3.5-turbo')
 # open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='bard', bard_api='xxxxxxx')
 
