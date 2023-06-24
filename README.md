@@ -28,6 +28,11 @@ Discover the hf-transllm package, a seamless integration of Hugging Face's infer
 ```
 pip install transllm
 ```
+Or
+```
+pip install git+https://github.com/dsdanielpark/hf-trnasllm.git
+```
+
 
 If you wish to use the various features and CLI:
 ```
