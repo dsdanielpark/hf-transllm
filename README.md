@@ -144,6 +144,9 @@ class MyLLMtranslator(LLMtranslator):
         return answer
 ```
 
+## [FAQs](./documents/FAQs.md)
+Use `Ctrl`+`F` for help in this `FAQs.md`.
+
 ## Contributors
 
 I would like to express my sincere gratitude for the contributions made by all the contributors.
