@@ -42,7 +42,6 @@ setup(
         "torch",
         "deepl",
         "transformers",
-        "googletrans",
         "bardapi",
         "openai",
         "sentencepiece",

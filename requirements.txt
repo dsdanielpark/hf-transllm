@@ -2,7 +2,6 @@ bardapi
 requests
 colorama
 httpx[http2]
-googletrans
 tokenizers == 0.6.0
 transformers
 deep_translator
