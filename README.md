@@ -35,7 +35,8 @@ pip install git+https://github.com/dsdanielpark/hf-trnasllm.git
 
 <br>
 
-If you wish to use the various features and CLI:
+## CLI
+If you wish to use CLI:
 ```
 git clone https://github.com/dsdanielpark/hf-transllm
 cd hf-transllm
