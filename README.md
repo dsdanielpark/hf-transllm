@@ -53,9 +53,7 @@ python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translato
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 ![](assets/hf-transllm-colab.png)
 
-
-
-<br><br>
+<br>
 
 Google Trnaslator
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
@@ -148,6 +146,8 @@ class MyLLMtranslator(LLMtranslator):
         
         return answer
 ```
+
+<br><br>
 
 ## [FAQs](./documents/FAQs.md)
 Use `Ctrl`+`F` for help in this `FAQs.md`.
