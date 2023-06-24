@@ -95,6 +95,49 @@ print(trnaslated_answer)
 
 <br>
 
+## Customized Inference
+```python
+import torch
+from transformers import LlamaTokenizer, LlamaForCausalLM
+from translang import TranslationService
+
+
+class MyLLMtranslator(LLMtranslator):
+    def __init__(
+        self,
+        model_path,
+        target_lang="ko",
+        translator="google",
+        torch_dtype=torch.float16,
+        device_map="auto",
+        deepl_api=None,
+        bard_api=None,
+        openai_model="gpt-3.5-turbo",
+        openai_api=None
+    ):
+        super().__init__(
+            model_path=model_path,
+            target_lang=target_lang,
+            translator=translator,
+            torch_dtype=torch_dtype,
+            device_map=device_map,
+            deepl_api=deepl_api,
+            bard_api=bard_api,
+            openai_model=openai_model,
+            openai_api=openai_api
+        )
+
+    def inference(self, prompt: str) -> str:
+        # Custom logic for inference
+        # You can override the implementation of the inference method here
+        # and provide your own logic for generating the translated answer
+        # Remember to return the translated answer as a string.
+
+        answer = customizing_process(prompt)
+        # Custom inference logic...
+        
+        return answer
+```
 
 ## Contributors
 
