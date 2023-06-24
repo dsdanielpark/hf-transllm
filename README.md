@@ -98,8 +98,7 @@ print(trnaslated_answer)
 ## Customized Inference
 ```python
 import torch
-from transformers import LlamaTokenizer, LlamaForCausalLM
-from translang import TranslationService
+from trnasllm import LLMtranslator
 
 
 class MyLLMtranslator(LLMtranslator):
