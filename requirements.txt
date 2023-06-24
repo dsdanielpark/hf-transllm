@@ -12,3 +12,4 @@ openai
 torch>=1.12.0
 accelerate
 sentencepiece==0.1.97
+translang
