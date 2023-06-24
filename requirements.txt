@@ -1,10 +1,9 @@
+bardapi
 requests
-deep_translator
 colorama
 httpx[http2]
-bardapi
 googletrans
-transformers
+transformer @git+https://github.com/huggingface/transformers
 deep_translator
 torch
 deepl
