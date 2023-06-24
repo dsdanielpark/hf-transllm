@@ -26,6 +26,7 @@ class LLMtranslator(TranslationService):
         target_lang="ko",
         translator="google",
         torch_dtype=torch.float16,
+        offload_folder="offload",
         device_map="auto",
         deepl_api_key=None,
         bard_api_key=None,
@@ -43,7 +44,7 @@ class LLMtranslator(TranslationService):
         self.target_lang = target_lang
         self.tokenizer = LlamaTokenizer.from_pretrained(model_path)
         self.model = LlamaForCausalLM.from_pretrained(
-            model_path, torch_dtype=torch_dtype, device_map=device_map
+            model_path, torch_dtype=torch_dtype, device_map=device_map, offload_folder=offload_folder
         )
 
     def process_prompt(self, prompt: str) -> str:
