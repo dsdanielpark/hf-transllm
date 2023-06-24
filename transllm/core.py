@@ -83,8 +83,10 @@ class LLMtranslator(TranslationService):
             str: The translated answer.
         """
         input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids
+        
+        # Different from this class's generate method is the generate method of the Hugging Face model.
         with torch.no_grad():
-            generation_output = self.model.generate(input_ids=input_ids, max_length=32)
+            generation_output = self.model.generate(input_ids=input_ids, max_length=32) 
         answer = self.tokenizer.decode(generation_output[0])
         return answer
 
