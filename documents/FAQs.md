@@ -13,12 +13,12 @@ https://stackoverflow.com/questions/73530569/pytorch-matmul-runtimeerror-addmm-i
 
 <br>
 
-**GPU inference with offloaded folder 
+**GPU inference with offloaded folder**
 ```python
 open_llama_kor = LLMtranslator(model_path, target_lang='ko', torch_dtype=torch.float16, translator='google', offload_folder="offload")
 ```
 
-**CPU inference with offloaded folder
+**CPU inference with offloaded folder**
 ```python
 open_llama_kor = LLMtranslator(model_path, target_lang='ko', torch_dtype=torch.float32, translator='google', offload_folder="offload")
 ```
