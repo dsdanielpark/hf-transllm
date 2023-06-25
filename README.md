@@ -84,7 +84,7 @@ trnaslated_answer = open_llama3b_kor.generate(prompt)
 print(trnaslated_answer)
 ```
 
-DeepL
+> DeepL
 - Support Languages: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
 
 Open AI, Bard use pre-prompt for translation.
@@ -110,7 +110,7 @@ print(trnaslated_answer)
 <br>
 
 
-Google Colab Example <br><br>
+> Google Colab Example <br><br>
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 ![](assets/hf-transllm-colab.png)
 
