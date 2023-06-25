@@ -28,6 +28,7 @@ class LLMtranslator(TranslationService):
         torch_dtype=torch.float16,
         offload_folder=None,
         device_map="auto",
+        google_api_key=None,
         deepl_api_key=None,
         bard_api_key=None,
         openai_api_key=None,
@@ -35,6 +36,7 @@ class LLMtranslator(TranslationService):
     ):
         super().__init__(
             translator=translator,
+            google_api_key=google_api_key,
             deepl_api_key=deepl_api_key,
             bard_api_key=bard_api_key,
             openai_api_key=openai_api_key,
