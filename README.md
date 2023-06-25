@@ -84,6 +84,8 @@ trnaslated_answer = open_llama3b_kor.generate(prompt)
 print(trnaslated_answer)
 ```
 
+<br>
+
 > DeepL
 - Support Languages: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
 
