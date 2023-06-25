@@ -51,11 +51,8 @@ There can be issues with various dependencies such as Hugging Face's Transformer
 <br>
 
 ## Usage    
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
-![](assets/hf-transllm-colab.png)
 
-
-Simple Usage
+> Simple Usage
 ```python
 from transllm import LLMtranslator
 
@@ -66,7 +63,7 @@ print(trnaslated_answer)
 ```
 <br>
 
-Google Trnaslator
+> Google Trnaslator
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
 ```python
 from transllm import LLMtranslator
@@ -76,16 +73,16 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_7b'
 # model_path = 'openlm-research/open_llama_13b'
 
-# Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Language == Korean
+# Get TransLLM Object (Korean)
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Unofficial test
+# open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google_official', google_api_key='xxxxxx') # Official Google Cloud Translation API 
+
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
 trnaslated_answer = open_llama3b_kor.generate(prompt)
 print(trnaslated_answer)
 ```
-
-<br>
 
 DeepL
 - Support Languages: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
@@ -111,6 +108,13 @@ print(trnaslated_answer)
 ```
 
 <br>
+
+
+Google Colab Example <br><br>
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
+![](assets/hf-transllm-colab.png)
+
+
 
 ## Customized Inference
 Applying LLMs to the majority of Hugging Face repositories is generally feasible. However, it can be challenging to apply them to objects that require unique tokenizers or inference processes. In such cases, it is recommended to customize the usage by incorporating a translation module for prompts.
