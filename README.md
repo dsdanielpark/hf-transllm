@@ -10,7 +10,7 @@ Development Status :: 3 - Alpha
 </p>
 
 
-> LLMtranslator translates and generates text in multiple languages.
+> LLMtranslator translates and generates text in multiple languages using LLMs(Large Language Models) on hugging-face repository.
 
 ![](assets/transllm.png)
 
@@ -35,27 +35,36 @@ pip install git+https://github.com/dsdanielpark/hf-trnasllm.git
 
 <br>
 
-If you wish to use the various features and CLI:
+## CLI
+If you wish to use CLI:
 ```
-pip install git+https://github.com/dsdanielpark/hf-transllm.git
+git clone https://github.com/dsdanielpark/hf-transllm
 cd hf-transllm
 pip install -r requirements.txt
 ```
-There can be issues with various dependencies such as Hugging Face's Transformers, SentencePiece, Torch, and CUDA. Please set up the appropriate environment by searching online.
 ```bash
 python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translator <google>
 ```
+There can be issues with various dependencies such as Hugging Face's Transformers, SentencePiece, Torch, and CUDA. Please set up the appropriate environment by searching online.
 <br>
 
 <br>
 
-## Usage 
-Applying LLMs to the majority of Hugging Face repositories is generally feasible. However, it can be challenging to apply them to objects that require unique tokenizers or inference processes. In such cases, it is recommended to customize the usage by incorporating a translation module for prompts.
-
-In other words, if you are familiar with the inference process or code from Hugging Face repositories, you can customize the translation object by adding a translation module before and after the known inference process or code.
+## Usage    
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
-
 ![](assets/hf-transllm-colab.png)
+
+
+Simple Usage
+```python
+from transllm import LLMtranslator
+
+open_llama3b_kor = LLMtranslator('openlm-research/open_llama_3b', target_lang='ko', translator='google') # Korean
+
+trnaslated_answer = open_llama3b_kor.generate("나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘")
+print(trnaslated_answer)
+```
+<br>
 
 Google Trnaslator
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
@@ -68,7 +77,7 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_13b'
 
 # Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google')
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Language == Korean
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
@@ -91,7 +100,7 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_13b'
 
 # Choose Translate Service API: DeepL, OpenAI, Bard
-open_llama3b_kor = LLMtranslator(model_path, target_lang='EN', translator='deepl', deepl_api='xxxxxxx') 
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ES', translator='deepl', deepl_api='xxxxxxx') # Language == Spanish
 # open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='openai', openai_api='xxxxxxx', openai_model='gpt-3.5-turbo')
 # open_llama3b_kor = LLMtranslator(model_path, target_lang='korean', translator='bard', bard_api='xxxxxxx')
 
@@ -104,6 +113,9 @@ print(trnaslated_answer)
 <br>
 
 ## Customized Inference
+Applying LLMs to the majority of Hugging Face repositories is generally feasible. However, it can be challenging to apply them to objects that require unique tokenizers or inference processes. In such cases, it is recommended to customize the usage by incorporating a translation module for prompts.
+
+In other words, if you are familiar with the inference process or code from Hugging Face repositories, you can customize the translation object by adding a translation module before and after the known inference process or code. Check [translang repository](https://github.com/dsdanielpark/translang) for more details.
 ```python
 import torch
 from trnasllm import LLMtranslator
@@ -145,6 +157,8 @@ class MyLLMtranslator(LLMtranslator):
         
         return answer
 ```
+
+<br><br>
 
 ## [FAQs](./documents/FAQs.md)
 Use `Ctrl`+`F` for help in this `FAQs.md`.
