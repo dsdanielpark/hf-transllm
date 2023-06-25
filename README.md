@@ -110,7 +110,8 @@ print(trnaslated_answer)
 <br>
 
 
-> Google Colab Example <br><br>
+> Google Colab Example
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
 ![](assets/hf-transllm-colab.png)
 
