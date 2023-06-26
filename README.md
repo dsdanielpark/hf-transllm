@@ -89,7 +89,7 @@ print(trnaslated_answer)
 
 <br>
 
-> DeepL
+> DeepL, Open AI, Bard
 - Support Languages: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
 
 Open AI, Bard use pre-prompt for translation.
