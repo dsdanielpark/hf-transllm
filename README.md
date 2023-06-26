@@ -51,11 +51,8 @@ There can be issues with various dependencies such as Hugging Face's Transformer
 <br>
 
 ## Usage    
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
-![](assets/hf-transllm-colab.png)
 
-
-Simple Usage
+> Simple Usage
 ```python
 from transllm import LLMtranslator
 
@@ -66,7 +63,9 @@ print(trnaslated_answer)
 ```
 <br>
 
-Google Trnaslator
+> Official Google Translation API
+- Support Languages: https://cloud.google.com/translate/docs/languages?hl=ko
+> Unofficial Google Trnaslator for non-profit purposes (such as feature testing)
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
 ```python
 from transllm import LLMtranslator
@@ -76,8 +75,11 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_7b'
 # model_path = 'openlm-research/open_llama_13b'
 
-# Get TransLLM Object
-open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Language == Korean
+# Get TransLLM Object (Korean)
+# open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google_official', google_api_key='xxxxxx') # Official Google Cloud Translation API 
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Unofficial test
+
+
 
 # Using Prompt in multi-language
 prompt = "나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘"
@@ -87,7 +89,7 @@ print(trnaslated_answer)
 
 <br>
 
-DeepL
+> DeepL, Open AI, Bard
 - Support Languages: https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer
 
 Open AI, Bard use pre-prompt for translation.
@@ -111,6 +113,15 @@ print(trnaslated_answer)
 ```
 
 <br>
+
+
+> Google Colab Example
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing) 
+![](assets/hf-transllm-colab.png)
+
+<br><br>
+
 
 ## Customized Inference
 Applying LLMs to the majority of Hugging Face repositories is generally feasible. However, it can be challenging to apply them to objects that require unique tokenizers or inference processes. In such cases, it is recommended to customize the usage by incorporating a translation module for prompts.
@@ -158,7 +169,11 @@ class MyLLMtranslator(LLMtranslator):
         return answer
 ```
 
-<br><br>
+<br>
+
+## About Google Translator
+Commercial use or official use of the Google Translate service is chargeable. Please provide the `translator="google_official"` and `google_api_key={YOUR_API_KEY}` arguments. Please responsibly use the `translator="google"` argument for the purpose of simple functionality verification. Refer to the following [notebook file](https://github.com/dsdanielpark/translang/blob/main/scripts/google_official.ipynb) and [official link](https://cloud.google.com/translate?utm_source=google&utm_medium=cpc&utm_campaign=japac-KR-all-en-dr-BKWS-all-mv-trial-EXA-dr-1605216&utm_content=text-ad-none-none-DEV_c-CRE_631260646738-ADGP_Hybrid%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20AI%20&%20ML_Translation%20AI_google%20translate%20api_main-KWID_43700073965169292-kwd-14329410560&userloc_1009871-network_g&utm_term=KW_google%20translate%20api&gclid=Cj0KCQjwy9-kBhCHARIsAHpBjHjTvBCM7NNcf4fYGsog4ViQErgJvACFXB5JCNUT0h_EpQ5kyUT-SrIaApZBEALw_wcB&gclsrc=aw.ds&hl=ko) for more information. Use the google argument only for some basic functionality testing.
+
 
 ## [FAQs](./documents/FAQs.md)
 Use `Ctrl`+`F` for help in this `FAQs.md`.
