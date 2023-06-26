@@ -10,7 +10,7 @@ class LLMtranslator(TranslationService):
 
     Args:
         model_path (str): The path to the Llama model.
-        target_lang (str, optional): The target language for translation (default: "ko").
+        target_lang (str, optional): The target language for translation (default: "en").
         translator (str, optional): The translation service to use (default: "google").
         torch_dtype (torch.dtype, optional): The data type for torch (default: torch.float16).
         device_map (str, optional): The device map for torch (default: "auto").
@@ -23,7 +23,7 @@ class LLMtranslator(TranslationService):
     def __init__(
         self,
         model_path,
-        target_lang="ko",
+        target_lang="en",
         translator="google",
         torch_dtype=torch.float16,
         offload_folder=None,
@@ -102,7 +102,10 @@ class LLMtranslator(TranslationService):
         Returns:
             str: The translated answer.
         """
-        translated_prompt = self.process_prompt(prompt)
-        answer = self.inference(translated_prompt)
-        translated_answer = self.process_answer(answer)
+        if self.target_lang =='en':
+            return self.inference(prompt)
+        else:
+            translated_prompt = self.process_prompt(prompt)
+            answer = self.inference(translated_prompt)
+            translated_answer = self.process_answer(answer)
         return translated_answer
