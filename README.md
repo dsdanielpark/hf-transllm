@@ -63,7 +63,9 @@ print(trnaslated_answer)
 ```
 <br>
 
-> Google Trnaslator
+> Official Google Translation API
+- Support Languages:https://cloud.google.com/translate/docs/languages?hl=ko
+> Unofficial Google Trnaslator for non-profit purposes (such as feature testing)
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
 ```python
 from transllm import LLMtranslator
@@ -74,8 +76,9 @@ model_path = 'openlm-research/open_llama_3b'
 # model_path = 'openlm-research/open_llama_13b'
 
 # Get TransLLM Object (Korean)
-open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Unofficial test
 # open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google_official', google_api_key='xxxxxx') # Official Google Cloud Translation API 
+open_llama3b_kor = LLMtranslator(model_path, target_lang='ko', translator='google') # Unofficial test
+
 
 
 # Using Prompt in multi-language
