@@ -64,7 +64,7 @@ print(trnaslated_answer)
 <br>
 
 > Official Google Translation API
-- Support Languages:https://cloud.google.com/translate/docs/languages?hl=ko
+- Support Languages: https://cloud.google.com/translate/docs/languages?hl=ko
 > Unofficial Google Trnaslator for non-profit purposes (such as feature testing)
 - Support Languages: https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py
 ```python
