@@ -46,7 +46,10 @@ class LLMtranslator(TranslationService):
         self.target_lang = target_lang
         self.tokenizer = LlamaTokenizer.from_pretrained(model_path)
         self.model = LlamaForCausalLM.from_pretrained(
-            model_path, torch_dtype=torch_dtype, device_map=device_map, offload_folder=offload_folder
+            model_path,
+            torch_dtype=torch_dtype,
+            device_map=device_map,
+            offload_folder=offload_folder,
         )
         self.model.tie_weights()
 
@@ -85,10 +88,10 @@ class LLMtranslator(TranslationService):
             str: The translated answer.
         """
         input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids
-        
+
         # Different from this class's generate method is the generate method of the Hugging Face model.
         with torch.no_grad():
-            generation_output = self.model.generate(input_ids=input_ids, max_length=32) 
+            generation_output = self.model.generate(input_ids=input_ids, max_length=32)
         answer = self.tokenizer.decode(generation_output[0])
         return answer
 
@@ -102,7 +105,7 @@ class LLMtranslator(TranslationService):
         Returns:
             str: The translated answer.
         """
-        if self.target_lang =='en':
+        if self.target_lang == "en":
             return self.inference(prompt)
         else:
             translated_prompt = self.process_prompt(prompt)

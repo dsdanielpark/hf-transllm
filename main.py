@@ -6,20 +6,14 @@ def main():
     parser = argparse.ArgumentParser(description="LLM Model Chat")
     parser.add_argument("--hfmodel", type=str, help="Path to the LLM model")
     parser.add_argument(
-        "--lang",
-        type=str,
-        default="ko",
-        help="language for translation (default: ko)",
+        "--lang", type=str, default="ko", help="language for translation (default: ko)",
     )
     parser.add_argument(
-        "--translator",
-        type=str,
-        default="google",
-        help="translate service API",
+        "--translator", type=str, default="google", help="translate service API",
     )
     args = parser.parse_args()
 
-    model = LLMtranslator(args.hfmodel, target_lang=args.lang, translator='google')
+    model = LLMtranslator(args.hfmodel, target_lang=args.lang, translator="google")
 
     print("=== LLM Model Chat ===")
     print("You can start chatting with the LLM model. Enter 'q' to quit.")
@@ -36,5 +30,6 @@ def main():
         print("LLM: ", answer)
         print("-----------------------------------------")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()
