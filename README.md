@@ -52,7 +52,7 @@ There can be issues with various dependencies such as Hugging Face's Transformer
 
 ## Usage    
 
-> Simple Usage
+### Simple Usage
 ```python
 from transllm import LLMtranslator
 
@@ -63,6 +63,8 @@ print(trnaslated_answer)
 ```
 
 <br><br><br>
+
+### Further    
 
 > Official Google Translation API
 - Support Languages: https://cloud.google.com/translate/docs/languages?hl=ko
