@@ -61,7 +61,8 @@ open_llama3b_kor = LLMtranslator('openlm-research/open_llama_3b', target_lang='k
 trnaslated_answer = open_llama3b_kor.generate("나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘")
 print(trnaslated_answer)
 ```
-<br>
+
+<br><br><br>
 
 > Official Google Translation API
 - Support Languages: https://cloud.google.com/translate/docs/languages?hl=ko
