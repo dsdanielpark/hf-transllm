@@ -33,24 +33,10 @@ pip install transllm
 pip install git+https://github.com/dsdanielpark/hf-trnasllm.git
 ```
 
-<br>
 
-## CLI
-If you wish to use CLI:
-```
-git clone https://github.com/dsdanielpark/hf-transllm
-cd hf-transllm
-pip install -r requirements.txt
-```
-```bash
-python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translator <google>
-```
-There can be issues with various dependencies such as Hugging Face's Transformers, SentencePiece, Torch, and CUDA. Please set up the appropriate environment by searching online.
-<br>
 
-<br>
 
-## Usage    
+## Quick Start    
 
 *Simple Usage*
 ```python
@@ -61,6 +47,18 @@ open_llama3b_kor = LLMtranslator('openlm-research/open_llama_3b', target_lang='k
 trnaslated_answer = open_llama3b_kor.generate("What's the weather in Seoul, Korea?")
 print(trnaslated_answer)
 ```
+If you wish to use CLI:
+```
+git clone https://github.com/dsdanielpark/hf-transllm
+cd hf-transllm
+pip install -r requirements.txt
+
+python main.py --hfmodel <openlm-research/open_llama_3b> --lang <ko> --translator <google>
+```
+There can be issues with various dependencies such as Hugging Face's Transformers, SentencePiece, Torch, and CUDA. Please set up the appropriate environment.
+
+> [!IMPORTANT]
+> All Hugging Face models compatible. Check model card for template, modify as needed.
 
 <br>
 
@@ -89,7 +87,6 @@ translated_answer = open_llama3b_kor.generate(prompt)
 print(translated_answer)
 ```
 
-<br>
 
 ### DeepL
 - Supported Languages of DeepL: [DeepL Languages](https://www.deepl.com/pro/select-country?cta=header-pro-button/#developer)
@@ -108,7 +105,7 @@ prompt = "Translate this text"
 translated_response = open_llama3b_kor.generate(prompt)
 print(translated_response)
 ```
-<br>
+
 
 ### OpenAI, Anthropic, Gemini Translation Services
 In progress
@@ -132,9 +129,6 @@ class MyLLMtranslator(LLMtranslator):
         # Custom logic here
         return custom_logic(prompt)
 ```
-
-### Open LLM Examples on Hugging Face
-- Several models listed for reference (e.g., `hf-internal-testing/tiny-random-gpt2`, `EleutherAI/gpt-neo-125m`).
 
 
 <br><br>
