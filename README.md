@@ -2,14 +2,16 @@ Development Status :: 3 - Alpha
 
 # LLM Translator on Hugging-face models <img alt="PyPI" src="https://img.shields.io/pypi/v/transllm?color=black">
 
+
+
+
+LLMtranslator translates and generates text in multiple languages using LLMs(Large Language Models) on hugging-face models.
+
 <p align="right">
     <a><img alt="PyPI package" src="https://img.shields.io/badge/pypi-transllm-black"></a>
     <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
     <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdsdanielpark%2Fhf-transllm&count_bg=%23000000&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
 </p>
-
-
-LLMtranslator translates and generates text in multiple languages using LLMs(Large Language Models) on hugging-face models.
 
 ![](assets/transllm.png)
 
@@ -56,7 +58,7 @@ from transllm import LLMtranslator
 
 open_llama3b_kor = LLMtranslator('openlm-research/open_llama_3b', target_lang='ko', translator='google') # Korean
 
-trnaslated_answer = open_llama3b_kor.generate("나와 내 동년배들이 좋아하는 뉴진스에 대해서 알려줘")
+trnaslated_answer = open_llama3b_kor.generate("What's the weather in Seoul, Korea?")
 print(trnaslated_answer)
 ```
 
@@ -64,6 +66,8 @@ print(trnaslated_answer)
 
 ## Translation API Integration Guide [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1117ikGEmU4FncBDl1xCC2IhPPDOr75lX?usp=sharing)
 ### Google Translator
+Official use of Google Translate is chargeable. Use `translator="google_official"` and provide `google_api_key`. Unofficial testing should use `translator="google"`. Refer to the [official documentation](https://cloud.google.com/translate) for more details.
+
 - Official Google Translation API Supported Languages: [Google Cloud Languages](https://cloud.google.com/translate/docs)
 - Unofficial Google Translator (Non-profit/Testing) Supported Languages: [Deep Translator Constants](https://github.com/nidhaloff/deep-translator/blob/master/deep_translator/constants.py)
 
@@ -113,7 +117,7 @@ In progress
 <br>
 
 ## Customized Inference
-Customizing the inference process for unique tokenizers or inference needs is possible. For advanced customization, add a translation module before and after the Hugging Face inference code.
+Customizing the inference process for unique prompt template or inference is possible. For advanced customization, add a translation module before and after the Hugging Face inference code.
 
 ### Custom Inference Example
 ```python
@@ -131,9 +135,6 @@ class MyLLMtranslator(LLMtranslator):
 
 ### Open LLM Examples on Hugging Face
 - Several models listed for reference (e.g., `hf-internal-testing/tiny-random-gpt2`, `EleutherAI/gpt-neo-125m`).
-
-### Google Translator Note
-- Official use of Google Translate is chargeable. Use `translator="google_official"` and provide `google_api_key`. Unofficial testing should use `translator="google"`. Refer to the [official documentation](https://cloud.google.com/translate) for more details.
 
 
 <br><br>
