@@ -1,4 +1,4 @@
-bardapi
+python-gemini-api
 requests
 colorama
 httpx[http2]

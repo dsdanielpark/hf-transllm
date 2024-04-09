@@ -42,7 +42,7 @@ setup(
         "torch",
         "deepl",
         "transformers",
-        "bardapi",
+        "python-gemini-api",
         "openai",
         "sentencepiece",
         "accelerate",

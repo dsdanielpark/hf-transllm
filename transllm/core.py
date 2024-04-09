@@ -15,7 +15,7 @@ class LLMtranslator(TranslationService):
         torch_dtype (torch.dtype, optional): The data type for torch (default: torch.float16).
         device_map (str, optional): The device map for torch (default: "auto").
         deepl_api_key (str, optional): DeepL API key (if required).
-        bard_api_key (str, optional): Bard API key (if required).
+        gemini_cookies (str, optional): Bard API key (if required).
         openai_model (str, optional): OpenAI model name (default: "gpt-3.5-turbo").
         openai_api_key (str, optional): OpenAI API key (if required).
     """
@@ -30,7 +30,7 @@ class LLMtranslator(TranslationService):
         device_map="auto",
         google_api_key=None,
         deepl_api_key=None,
-        bard_api_key=None,
+        gemini_cookies=None,
         openai_api_key=None,
         openai_model="gpt-3.5-turbo",
     ):
@@ -38,7 +38,7 @@ class LLMtranslator(TranslationService):
             translator=translator,
             google_api_key=google_api_key,
             deepl_api_key=deepl_api_key,
-            bard_api_key=bard_api_key,
+            gemini_cookies=gemini_cookies,
             openai_api_key=openai_api_key,
             openai_model=openai_model,
         )
